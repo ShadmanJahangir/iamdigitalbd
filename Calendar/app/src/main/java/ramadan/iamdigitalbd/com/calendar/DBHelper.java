@@ -20,7 +20,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("CREATE TABLE ramadan("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + " r_date TEXT," + " r_day TEXT,"+"r_sehri TEXT," + "r_iftar TEXT)");
+                    + " r_date TEXT NOT NULL,"  + " r_day TEXT,"+"r_sehri TEXT," + "r_iftar TEXT)");
 
             PRE_DEFINED_VALUES(db);
         }

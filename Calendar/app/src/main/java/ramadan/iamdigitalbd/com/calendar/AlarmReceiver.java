@@ -14,6 +14,9 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
+import java.io.InputStream;
+import java.net.URI;
+
 public class AlarmReceiver extends BroadcastReceiver {
 
     private static final int MY_NOTIFICATION_ID = 1;
@@ -26,6 +29,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         Bundle bundle = intent.getExtras();
         String name = bundle.getString("Event Name");
         String location = bundle.getString("Event Location");
+        Uri path = Uri.parse("android.resource://your.app.package/" + R.raw.fatiha);
+
 
         Intent myIntent = new Intent();
         myIntent.setClass(context, MyCalendarActivity.class);
